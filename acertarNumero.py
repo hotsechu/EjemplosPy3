@@ -23,9 +23,19 @@ def pedir_entero_intervalo(texto, minimo, maximo):
     return numero
 
 
-def jugar():
-    minimo = 0
-    maximo = 100
+def pedir_limites():
+    while True:
+        minimo = pedir_entero("Límite inferior : ")
+        maximo = pedir_entero("Límite superior : ")
+        if minimo < maximo:
+            break
+        else:
+            print("Error: el límite inferior debe ser menor que el límite superior")
+
+    return minimo, maximo
+
+
+def acertarEntre(minimo, maximo):
     valorCorrecto = random.randint(minimo, maximo)
     acertado = False
     intentos = 0
@@ -42,6 +52,12 @@ def jugar():
             maximo = numero
             print("Demasiaso grande")
 
+    return
+
+
+def jugar():
+    minimo, maximo = pedir_limites()
+    acertarEntre(minimo, maximo)
     return
 
 
