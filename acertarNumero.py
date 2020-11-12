@@ -1,5 +1,5 @@
 # Programa para jugar a acertar un múmero que se genera
-# aleatoriamente entre 9 y 99 ambos inclusive
+# aleatoriamente entre los límites indicados por el usuario
 
 import sys
 import random
