@@ -13,8 +13,12 @@ class Punto:
         self.y = y
         self.z = z
 
-    def mostrar(self):
-        print("Punto({}, {}, {})".format(self.x, self.y, self.z))
+    def __str__(self):
+        """
+        Sobrecarga del  método print
+        :return: cadena formateada con las coordenadas del punto
+        """
+        return "Punto({}, {}, {})".format(self.x, self.y, self.z)
 
     def __add__(self, other):
         """
@@ -37,15 +41,15 @@ class Punto:
                      self.z - other.z)
 
 
-# No es necesario niguna palabra clave para invocar la construcción
+# No es necesario ninguna palabra clave para invocar la construcción
 # de un objeto, la propia declaración utiliza el método __init__
 px = Punto(1, -3, 4)
-px.mostrar()
+print(px)
 
 py = Punto(3, 3, 3)
 
 pz = px + py
-pz.mostrar()
+print(pz)
 
 pz = px - py
-pz.mostrar()
+print(pz)
